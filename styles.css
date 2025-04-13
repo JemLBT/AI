@@ -1,3 +1,15 @@
+body {
+  background-image: linear-gradient(
+    to right top,
+    #eeeff0,
+    #f1f2f3,
+    #f5f5f6,
+    #f8f8f8,
+    #fbfbfb
+  );
+  height: 900px;
+}
+
 button {
   margin: 0 auto;
   display: block;
@@ -8,6 +20,7 @@ button {
   border-radius: 10px;
   color: black;
   background-color: white;
+  font-family: "manrope", sans-serif;
 }
 
 button:hover {
