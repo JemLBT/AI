@@ -13,7 +13,7 @@ function generateSmoothie(event) {
   event.preventDefault();
   let apiKey = "2046c535afeb092fo82f1d306d8a2b2t";
   let context =
-    "Your are a healthy AI Assistant that gives healthy smoothie recipe. Your recipe's are less than 10 lines. The recipe must be provided in HTML format. Example: <p>this is a recipe</p>";
+    "Your are a healthy AI Assistant that gives healthy smoothie recipe. Your recipe's are less than 10 lines. Example: <p>this is a recipe</p>";
   let prompt =
     "Generate a healthy smoothie recipe, in less than 10 lines. Must include fruit. ";
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
