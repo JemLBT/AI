@@ -1,30 +1,27 @@
-function displayJoke(response) {
-  console.log(response.data.answer);
-
-  new Typewriter("#joke", {
+function generateSmoothie(event) {
+  event.preventDefault();
+  Typewriter("#smoothie", {
     strings: response.data.answer,
     autoStart: true,
     cursor: null,
-    delay: 20,
+    delay: 1,
   });
-}
 
-function generateJoke(event) {
-  event.preventDefault();
   let apiKey = "10588b3do607b336f1e63a30b7f6ft4a";
   let context =
-    "Your are a very funny AI Assistant that tells short and funny jokes. The joke must be provided in HTML format. Example: <p>this is a joke</p>";
-  let prompt = "Generate a short and unique joke about dogs. ";
+    "Your are a health concious AI Assistant that generates healthy smoothie reciepes. The reciepe must be provided in HTML format. Example: <p>Here is your smoothie!</p>";
+  let prompt =
+    "Generate a healthy smoothie reciepe. This should be in less than 10 lines. Please use an emoji for each line. ";
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
-  let jokeElement = document.querySelector("#joke");
+  let smoothieElement = document.querySelector("#smoothie");
 
-  jokeElement.innerHTML =
-    "Generating your very own joke for you... it will be worth the wait";
+  smoothieElement.innerHTML =
+    "Generating a healthy smoothie for you... it will be worth the wait";
 
   console.log("called the AI api");
-  axios.get(apiUrl).then(displayJoke);
+  axios.get(apiUrl).then(displaySmoothie);
 }
 
-let generatorButton = document.querySelector("#generate-joke-button");
-generatorButton.addEventListener("click", generateJoke);
+let generatorButton = document.querySelector("#generate-smoothie-button");
+generatorButton.addEventListener("click", generateSmoothie);
