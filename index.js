@@ -15,12 +15,13 @@ function generateSmoothie(event) {
   let context =
     "Your are a healthy AI Assistant that gives healthy smoothie recipe. Your recipe's are less than 10 lines. Example: <p>this is a recipe</p>";
   let prompt =
-    "Generate a healthy smoothie recipe, in less than 10 lines. Must include fruit. ";
+    "Generate a healthy smoothie recipe, in less than 10 lines. Must include fruit. Must be different each search. ";
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
   let smoothieElement = document.querySelector("#smoothie");
 
-  smoothieElement.innerHTML = "Generating a smoothie for you.. please wait";
+  smoothieElement.innerHTML =
+    "Generating your smoothie...this may take a few seconds";
 
   axios.get(apiUrl).then(displaySmoothie);
 }
